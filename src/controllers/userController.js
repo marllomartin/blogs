@@ -9,4 +9,13 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { login };
+const createUser = async (req, res) => {
+  try {
+    const result = await userService.createUser(req.body);
+    return res.status(201).json(result);
+  } catch (Error) {
+    return res.status(409).send({ message: Error.message });
+  }
+};
+
+module.exports = { login, createUser };
