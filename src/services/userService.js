@@ -2,14 +2,14 @@ const { User } = require('../database/models');
 const generateToken = require('../helpers/generateToken');
 
 const login = async ({ email, password }) => {
-  const result = await User.findAll({
+  const verify = await User.findAll({
     where: {
       email,
       password,
     },
   });
 
-  if (!result || result.length === 0) {
+  if (!verify || verify.length === 0) {
     throw new Error('Invalid fields');
   }
 
@@ -17,4 +17,22 @@ const login = async ({ email, password }) => {
   return { token };
 };
 
-module.exports = { login };
+const createUser = async (newUser) => {
+  const { email } = newUser;
+  const verify = await User.findAll({
+    where: {
+      email,
+    },
+  });
+
+  if (verify.length > 0) {
+    throw new Error('User already registered');
+  }
+
+  await User.create(newUser);
+
+  const token = generateToken({ email });
+  return { token };
+};
+
+module.exports = { login, createUser };
