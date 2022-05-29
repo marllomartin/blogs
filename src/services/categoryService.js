@@ -15,4 +15,14 @@ const createCategory = async (newCategory) => {
   return newCategory;
 };
 
-module.exports = { createCategory };
+const getAllCategories = async () => {
+  const categories = await Category.findAll();
+
+  if (!categories || categories.length === 0) {
+    throw new Error('No categories found');
+  }
+
+  return categories;
+};
+
+module.exports = { createCategory, getAllCategories };
