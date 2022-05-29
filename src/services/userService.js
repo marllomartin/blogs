@@ -20,9 +20,7 @@ const login = async ({ email, password }) => {
 const createUser = async (newUser) => {
   const { email } = newUser;
   const verify = await User.findAll({
-    where: {
-      email,
-    },
+    where: { email },
   });
 
   if (verify.length > 0) {
@@ -47,4 +45,17 @@ const getAllUsers = async () => {
   return users;
 };
 
-module.exports = { login, createUser, getAllUsers };
+const getByIdUser = async (id) => {
+  const user = await User.findOne({
+    where: { id },
+    attributes: { exclude: ['password'] },
+  });
+
+  if (!user || user.length === 0) {
+    throw new Error('User does not exist');
+  }
+
+  return user;
+};
+
+module.exports = { login, createUser, getAllUsers, getByIdUser };
