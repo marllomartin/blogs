@@ -2,7 +2,7 @@ require('dotenv').config();
 const app = require('./api');
 
 const { login, createUser, getAllUsers, getByIdUser } = require('./controllers/userController');
-const { createCategory } = require('./controllers/categoryController');
+const { createCategory, getAllCategories } = require('./controllers/categoryController');
 
 const authLogin = require('./middlewares/authLogin');
 const authNewUser = require('./middlewares/authNewUser');
@@ -27,5 +27,6 @@ app.get('/user/:id', authToken, getByIdUser);
 
 // Category
 app.post('/categories', authToken, authNewCategory, createCategory);
+app.get('/categories', authToken, getAllCategories);
 
 app.listen(port, () => console.log('ouvindo porta', port));
