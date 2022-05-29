@@ -35,4 +35,16 @@ const createUser = async (newUser) => {
   return { token };
 };
 
-module.exports = { login, createUser };
+const getAllUsers = async () => {
+  const users = await User.findAll({
+    attributes: { exclude: ['password'] },
+  });
+
+  if (!users || users.length === 0) {
+    throw new Error('No users found');
+  }
+
+  return users;
+};
+
+module.exports = { login, createUser, getAllUsers };
