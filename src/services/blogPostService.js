@@ -21,4 +21,26 @@ const getAllBlogPosts = async () => {
   return blogPosts;
 };
 
-module.exports = { getAllBlogPosts };
+const getByIdBlogPost = async (id) => {
+  const blogPost = await BlogPost.findOne({
+    where: { id },
+    include: [{
+      model: User,
+      as: 'user',
+      required: false,
+      attributes: { exclude: ['password'] },
+    },
+  {
+    model: Category,
+    as: 'categories',
+  }],
+  });
+  
+  if (!blogPost || blogPost.length === 0) {
+    throw new Error('Post does not exist');
+  }
+
+  return blogPost;
+};
+
+module.exports = { getAllBlogPosts, getByIdBlogPost };
