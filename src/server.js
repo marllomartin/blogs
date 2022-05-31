@@ -3,7 +3,7 @@ const app = require('./api');
 
 const { login, createUser, getAllUsers, getByIdUser } = require('./controllers/userController');
 const { createCategory, getAllCategories } = require('./controllers/categoryController');
-const { getAllBlogPosts } = require('./controllers/blogPostController');
+const { getAllBlogPosts, getByIdBlogPost } = require('./controllers/blogPostController');
 
 const authLogin = require('./middlewares/authLogin');
 const authNewUser = require('./middlewares/authNewUser');
@@ -32,5 +32,6 @@ app.get('/categories', authToken, getAllCategories);
 
 // BlogPost
 app.get('/post', authToken, getAllBlogPosts);
+app.get('/post/:id', authToken, getByIdBlogPost);
 
 app.listen(port, () => console.log('ouvindo porta', port));
