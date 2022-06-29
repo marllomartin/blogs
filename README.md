@@ -131,13 +131,11 @@ response:
 
 <details>
 <summary><h4>Endpoint para a listagem dos usuários</h4></summary>
-<p><b>GET</b> | http://localhost:3000/users</p>
+<p><b>GET</b> | http://localhost:3000/user</p>
 
 header:
-```json
-{
-  "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjU2NTI3NTUwLCJleHAiOjE2NTY1MzExNTB9.l60No6H5_WSc9H_HDXqz9nGzR3pwmdVEbfCS5LChvrQ",
-}
+```
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjU2NTI3NTUwLCJleHAiOjE2NTY1MzExNTB9.l60No6H5_WSc9H_HDXqz9nGzR3pwmdVEbfCS5LChvrQ
 ```
 response:
 ```json
@@ -149,11 +147,82 @@ response:
    "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
   },
   {
-	  "id": 2,
+   "id": 2,
    "displayName": "Michael Schumacher",
    "email": "MichaelSchumacher@gmail.com",
    "image": "https://sportbuzz.uol.com.br/media/_versions/gettyimages-52491565_widelg.jpg"
  }
+]
+```
+</details>
+
+<details>
+<summary><h4>Endpoint para a listagem de um usuário de ID específico</h4></summary>
+<p><b>GET</b> | http://localhost:3000/user/1</p>
+
+header:
+```
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjU2NTI3NTUwLCJleHAiOjE2NTY1MzExNTB9.l60No6H5_WSc9H_HDXqz9nGzR3pwmdVEbfCS5LChvrQ
+```
+response:
+```json
+ {
+  "id": 1,
+  "displayName": "Lewis Hamilton",
+  "email": "lewishamilton@gmail.com",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
+ }
+```
+</details>
+
+<details>
+<summary><h4>Endpoint para o registro de uma nova categoria de posts</h4></summary>
+<p><b>POST</b> | http://localhost:3000/categories</p>
+
+header:
+```
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjU2NTI3NTUwLCJleHAiOjE2NTY1MzExNTB9.l60No6H5_WSc9H_HDXqz9nGzR3pwmdVEbfCS5LChvrQ
+```
+
+body:
+```json
+{
+  "name": "Typescript"
+}
+```
+
+response:
+```json
+{
+  "id": 3,
+  "name": "Sequelize"
+}
+```
+</details>
+
+<details>
+<summary><h4>Endpoint para a listagem das categorias de posts</h4></summary>
+<p><b>GET</b> | http://localhost:3000/categories</p>
+
+header:
+```
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjU2NTI3NTUwLCJleHAiOjE2NTY1MzExNTB9.l60No6H5_WSc9H_HDXqz9nGzR3pwmdVEbfCS5LChvrQ
+```
+response:
+```json
+[
+  {
+    "id": 1,
+    "name": "Inovação"
+  },
+  {
+    "id": 2,
+    "name": "Escola"
+  },
+  {
+    "id": 3,
+    "name": "Sequelize"
+  }
 ]
 ```
 </details>
