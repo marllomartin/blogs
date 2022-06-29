@@ -61,7 +61,7 @@ Esse projeto utiliza variáveis de ambiente. Renomeie o arquivo `.env.example` p
 ```
 git clone git@github.com:marllomartin/blogs.git
 
-cd blacksmith
+cd blogs
 ```
 
 ### Instalando as dependências:
