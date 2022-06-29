@@ -74,7 +74,10 @@ npm install
 ```
 npx sequelize db:create
 ```
-
+### Executando as Migrations do Banco de Dados com Sequelize:
+```
+npx sequelize db:migrate
+```
 ### Populando o Banco de Dados com Sequelize:
 ```
 npx sequelize db:seed:all
