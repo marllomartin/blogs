@@ -226,3 +226,66 @@ response:
 ]
 ```
 </details>
+
+<details>
+<summary><h4>Endpoint para a listagem de todos os posts</h4></summary>
+<p><b>GET</b> | http://localhost:3000/post</p>
+
+header:
+```
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjU2NTI3NTUwLCJleHAiOjE2NTY1MzExNTB9.l60No6H5_WSc9H_HDXqz9nGzR3pwmdVEbfCS5LChvrQ
+```
+response:
+```json
+[
+ {
+  "id": 1,
+  "title": "Post do Ano",
+  "content": "Melhor post do ano",
+  "userId": 1,
+  "published": "2011-08-01T19:58:00.000Z",
+  "updated": "2011-08-01T19:58:51.000Z",
+  "user": {
+   "id": 1,
+   "displayName": "Lewis Hamilton",
+   "email": "lewishamilton@gmail.com",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
+	 },
+  "categories": [
+   {
+    "id": 1,
+    "name": "Inovação",
+    "PostCategory": {
+     "postId": 1,
+     "categoryId": 1
+    }
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "title": "Vamos que vamos",
+  "content": "Foguete não tem ré",
+  "userId": 1,
+  "published": "2011-08-01T19:58:00.000Z",
+  "updated": "2011-08-01T19:58:51.000Z",
+  "user": {
+   "id": 1,
+   "displayName": "Lewis Hamilton",
+   "email": "lewishamilton@gmail.com",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
+  },
+  "categories": [
+   {
+    "id": 2,
+    "name": "Escola",
+    "PostCategory": {
+     "postId": 2,
+     "categoryId": 2
+    }
+   }
+  ]
+ }
+]
+```
+</details>
