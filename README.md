@@ -11,7 +11,7 @@ enquanto eu estudava na [Trybe](https://www.betrybe.com/).
 
 ## Aprendizados
 
-  * Configuração de uma API utilizando Node e Sequelize;
+  * Configuração de uma API utilizando Node, Express e Sequelize;
 
   * Criação de Migrations no Sequelize;
 
