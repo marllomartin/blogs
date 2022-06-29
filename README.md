@@ -9,6 +9,8 @@
 Projeto de um CRUD (Create, Read, Update, Delete) de produção de conteúdos para um Blog, no formato de uma API feito
 enquanto eu estudava na [Trybe](https://www.betrybe.com/).
 
+![DER](https://github.com/marllomartin/blogs/blob/main/public/der.png)
+
 ## Aprendizados
 
   * Configuração de uma API utilizando Node, Express e Sequelize;
@@ -68,7 +70,12 @@ cd blogs
 ```
 npm install
 ```
-### Inicializando o projeto:
+### Inicializando o Banco de Dados com Sequelize:
 ```
-npm run
+npx sequelize db:create
+```
+
+### Populando o Banco de Dados com Sequelize:
+```
+npx sequelize db:seed:all
 ```
